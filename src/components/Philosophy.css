@@ -1,0 +1,36 @@
+.philosophy-section {
+  margin-bottom: 50vh;
+  text-align: center;
+}
+
+.philosophy-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.philosophy-text {
+  max-width: 80%;
+  line-height: 1.2;
+}
+
+.word {
+  display: inline-block;
+}
+
+.accent-word {
+  color: var(--accent-primary);
+}
+
+.philosophy-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: var(--accent-secondary);
+  transform-origin: top;
+  opacity: 0.5;
+  box-shadow: 0 0 10px var(--accent-secondary);
+}

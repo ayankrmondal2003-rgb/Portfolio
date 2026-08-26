@@ -1,0 +1,36 @@
+.scroll-video-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+  background-color: #050505;
+}
+
+.scroll-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: #050505;
+  opacity: var(--overlay-opacity, 0.4);
+  z-index: 1;
+  transition: opacity 0.5s ease; /* Smooth out any GSAP scrub jumps slightly if needed */
+}
+
+.video-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 30%, #050505 150%);
+  z-index: 2;
+  pointer-events: none;
+}

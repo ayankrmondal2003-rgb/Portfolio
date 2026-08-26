@@ -1,0 +1,72 @@
+.education-section {
+  padding: 10vh 0;
+  margin-bottom: 30vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.education-title {
+  margin-bottom: 15vh;
+}
+
+.education-content {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5vw;
+}
+
+.education-bg-graphic {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
+  z-index: -1;
+  pointer-events: none;
+  font-size: clamp(8rem, 25vw, 25rem); /* Extremely huge background text */
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+}
+
+.education-details {
+  max-width: 600px;
+  background-color: rgba(5, 5, 5, 0.4);
+  backdrop-filter: blur(5px);
+  padding: 40px;
+  border-left: 2px solid var(--accent-cyan);
+}
+
+.education-degree {
+  color: var(--text-main);
+  line-height: 1.1;
+}
+
+.education-meta {
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.education-highlight {
+  color: var(--accent-cyan);
+}
+
+.education-institute {
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .education-content {
+    justify-content: flex-start;
+    padding-right: 0;
+  }
+  .education-bg-graphic {
+    top: -30px;
+  }
+  .education-details {
+    padding: 20px;
+  }
+}

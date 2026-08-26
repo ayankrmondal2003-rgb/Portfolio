@@ -1,0 +1,25 @@
+.marquee-container {
+  width: 100vw;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px 0;
+  margin: 10vh 0;
+  white-space: nowrap;
+  display: flex;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 30s linear infinite;
+  color: var(--text-muted);
+}
+
+.marquee-content span {
+  padding-right: 50px;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Assuming content is duplicated enough to seamlessly loop */
+}

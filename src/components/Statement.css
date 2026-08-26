@@ -1,0 +1,24 @@
+.statement-section {
+  height: 200vh; /* Extra tall for sequential scroll animation */
+  margin-bottom: 20vh;
+}
+
+.statement-container {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.statement-block {
+  position: absolute;
+  width: 100%;
+}
+
+.statement-final {
+  position: absolute;
+  width: 100%;
+}

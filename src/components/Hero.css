@@ -1,0 +1,162 @@
+.hero-section {
+  padding-top: 15vh;
+  margin-bottom: 30vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh;
+  width: 100%;
+}
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.hero-availability {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.hero-info-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+.hero-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--text-main);
+  text-align: right;
+}
+
+.hero-metadata {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: right;
+  color: var(--text-muted);
+}
+
+.hero-middle {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: end;
+  position: relative;
+}
+
+.hero-titles {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+}
+
+.hero-name {
+  color: var(--text-main);
+  /* The clamp for responsive typography was added globally but we ensure it here */
+  font-size: clamp(3.8rem, 11vw, 11rem);
+}
+
+.hero-name:nth-child(2) {
+  align-self: center;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-muted);
+}
+
+.hero-name:nth-child(3) {
+  align-self: flex-start;
+  color: var(--text-main);
+}
+
+.hero-academic-graphic {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.academic-score {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-weight: 700;
+  line-height: 0.9;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--accent-cyan);
+}
+
+.academic-label {
+  color: var(--accent-cyan);
+  margin-top: 10px;
+}
+
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.hero-desc-container {
+  max-width: 400px;
+}
+
+.hero-desc {
+  font-size: 1.2rem;
+  color: var(--text-main);
+  margin-bottom: 15px;
+}
+
+.hero-tags {
+  color: var(--text-muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: right;
+}
+
+.hero-link {
+  transition: color 0.3s ease;
+}
+
+.hero-link:hover {
+  color: var(--accent-magenta);
+}
+
+@media (max-width: 768px) {
+  .hero-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .hero-metadata {
+    text-align: left;
+  }
+  .hero-middle {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero-academic-graphic {
+    align-items: flex-start;
+  }
+  .hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  .hero-actions {
+    text-align: left;
+  }
+}

@@ -1,0 +1,38 @@
+.stats-graphic-section {
+  padding: 20vh 0;
+  margin-bottom: 20vh;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15vh;
+}
+
+.stat-block {
+  text-align: center;
+}
+
+.stat-number {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-main);
+  line-height: 0.9;
+  margin-bottom: 20px;
+}
+
+.stat-label {
+  color: var(--accent-cyan);
+}
+
+.stat-divider {
+  width: 1px;
+  height: 10vh;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 10vh auto 0;
+}
+
+@media (max-width: 768px) {
+  .stat-number {
+    font-size: clamp(4rem, 15vw, 6rem);
+  }
+}

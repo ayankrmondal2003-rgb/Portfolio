@@ -1,0 +1,28 @@
+.exploring-section {
+  padding: 10vh 0;
+  margin-bottom: 20vh;
+}
+
+.exploring-title {
+  margin-bottom: 10vh;
+}
+
+.exploring-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.exploring-item {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-muted);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1;
+  transition: -webkit-text-stroke 0.3s ease, color 0.3s ease;
+  cursor: default;
+}
+
+.exploring-item:hover {
+  -webkit-text-stroke: 1px var(--accent-cyan);
+  color: var(--accent-cyan);
+}
