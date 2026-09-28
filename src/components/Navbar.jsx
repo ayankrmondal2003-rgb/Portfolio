@@ -15,11 +15,18 @@ const Navbar = () => {
     );
   }, []);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    const closeOnEscape = (event) => { if (event.key === 'Escape') setMenuOpen(false); };
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [menuOpen]);
+
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
     <>
-      <nav className="navbar" ref={navRef}>
+      <nav aria-label="Main navigation" className={`navbar ${menuOpen ? 'menu-expanded' : ''}`} ref={navRef}>
         <div className="navbar-logo">
           <a href="#" className="interactive display-large" style={{ fontSize: '1.5rem' }}>AKM.</a>
         </div>
@@ -34,13 +41,13 @@ const Navbar = () => {
           <a href="#contact" className="interactive nav-link">CONTACT</a>
         </div>
 
-        <button className="mobile-menu-btn interactive mono-label mobile-only" onClick={toggleMenu}>
+        <button className="mobile-menu-btn interactive mono-label mobile-only" onClick={toggleMenu} aria-expanded={menuOpen} aria-controls="mobile-navigation">
           {menuOpen ? 'CLOSE' : 'MENU'}
         </button>
       </nav>
 
       {/* Fullscreen Mobile Menu */}
-      <div className={`mobile-menu ${menuOpen ? 'is-open' : ''}`}>
+      <div id="mobile-navigation" inert={!menuOpen} className={`mobile-menu ${menuOpen ? 'is-open' : ''}`}>
         <div className="mobile-menu-links display-large">
           <a href="#about" onClick={toggleMenu}><span className="mono-label">01</span> ABOUT</a>
           <a href="#work" onClick={toggleMenu}><span className="mono-label">02</span> WORK</a>

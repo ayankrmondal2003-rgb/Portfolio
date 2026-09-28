@@ -6,8 +6,8 @@ export const portfolioData = {
   hero: {
     name: ["AYAN", "KUMAR", "MONDAL"],
     roles: ["AI / ML DEVELOPER", "FULL-STACK BUILDER", "HACKATHON EXPLORER"],
-    description: "I turn problem statements into intelligent products.",
-    tags: "AI systems • Full-stack experiences • Rapid prototypes",
+    description: "I build thoughtful AI products that solve real problems.",
+    tags: "Applied AI · Full-stack development · Rapid prototyping",
     metadata: {
       course: "B.TECH CSE — AI & ML",
       university: "HALDIA INSTITUTE OF TECHNOLOGY",
@@ -17,8 +17,8 @@ export const portfolioData = {
   about: {
     headlines: ["BUILD.", "TEST.", "LEARN.", "REPEAT."],
     paragraphs: [
-      "I'm Ayan Kumar Mondal, a second-year B.Tech student specializing in Artificial Intelligence & Machine Learning at Haldia Institute of Technology.",
-      "I build practical AI, full-stack and IoT systems and enjoy turning ideas into working prototypes under real time constraints."
+      "I'm Ayan, a second-year B.Tech student at Haldia Institute of Technology, specializing in Artificial Intelligence and Machine Learning.",
+      "I work across AI, web development and IoT. I enjoy taking an idea from an early sketch to a working prototype, then testing and refining it."
     ],
     metadata: {
       "BASED IN": "Tamluk, West Bengal",
@@ -36,10 +36,10 @@ export const portfolioData = {
   projects: [
     {
       id: "01",
-      title: "ENTERPRISE AI INTERVIEWER",
+      title: "Enterprise AI Interviewer",
       badge: "48H BUILD",
       techStack: "Python • FastAPI • Gemini • Groq • Docker",
-      description: "Co-built an adaptive AI interviewer that grounds questions in candidate learning history, probes answers and produces multi-factor assessment reports.",
+      description: "Co-built an AI interviewer that adapts to each candidate, asks follow-up questions and turns the conversation into a structured assessment.",
       metadata: {
         "TYPE": "GENERATIVE AI",
         "BUILD": "48 HOURS",
@@ -64,7 +64,7 @@ export const portfolioData = {
       subtitle: "TOURISM MARKETPLACE",
       badge: "TEJAS OFFLINE FINALIST",
       techStack: "React • TypeScript • Node.js • Prisma • Gemini • Razorpay",
-      description: "A tourism platform combining discovery, local vendors, maps, payments and AI-powered itinerary workflows.",
+      description: "A tourism platform for discovering local experiences, planning trips with AI and booking with local vendors.",
       metadata: {
         "EVENT": "TEJAS INDIA 2026",
         "STATUS": "24H OFFLINE FINALE",
@@ -85,10 +85,10 @@ export const portfolioData = {
     },
     {
       id: "03",
-      title: "MEGHDRISHTI",
+      title: "Meghdrishti",
       badge: "ISRO BAH 2026",
       techStack: "Python • PyTorch • Swin Transformer • FastAPI • Docker",
-      description: "A GenAI satellite cloud-removal system for optical satellite imagery using hybrid U-Net, attention and multi-scale GAN components.",
+      description: "A generative AI system that reconstructs cloud-obscured satellite imagery using computer vision and deep learning.",
       metadata: {
         "DOMAIN": "GENAI / COMPUTER VISION",
         "TEAM": "TRINOVA",
@@ -109,7 +109,7 @@ export const portfolioData = {
     },
     {
       id: "04",
-      title: "PARKINSON'S DISEASE PREDICTION",
+      title: "Parkinson's Disease Prediction",
       badge: "HACKARENA",
       techStack: "Python • Machine Learning • Predictive Modeling",
       description: "A disease-detection prediction model developed during HackArena at Haldia Institute of Technology.",

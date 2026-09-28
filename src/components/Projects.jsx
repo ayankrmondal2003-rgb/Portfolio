@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import gsap from 'gsap';
 import { portfolioData } from '../data/portfolioData';
 import ProjectModal from './ProjectModal';
@@ -9,6 +9,8 @@ const Projects = () => {
   const projectRefs = useRef([]);
   projectRefs.current = [];
   const [activeProject, setActiveProject] = useState(null);
+
+  const closeProject = useCallback(() => setActiveProject(null), []);
 
   const addToRefs = (el) => {
     if (el && !projectRefs.current.includes(el)) {
@@ -29,35 +31,24 @@ const Projects = () => {
         }
       });
 
-      // Pin the section title slightly
-      gsap.to('.projects-title', {
-        y: 200,
-        opacity: 0.2,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top center",
-          end: "bottom center",
-          scrub: true
-        }
-      });
-
       // Reveal each project
-      projectRefs.current.forEach((el, index) => {
+      projectRefs.current.forEach((el) => {
         gsap.fromTo(el,
           { opacity: 0, y: 100 },
           {
             opacity: 1,
             y: 0,
+            duration: 0.7,
+            ease: "power2.out",
             scrollTrigger: {
               trigger: el,
               start: "top 80%",
-              end: "top 40%",
-              scrub: 1
+              once: true
             }
           }
         );
       });
-      
+
     }, sectionRef);
 
     return () => ctx.revert();
@@ -66,17 +57,14 @@ const Projects = () => {
   return (
     <section className="section projects-section" id="work" ref={sectionRef}>
       <div className="container">
-        <h2 className="display-large projects-title">
-          SELECTED<br/>WORK.
-        </h2>
-        
+        <div className="work-heading"><div><p className="mono-label section-kicker">Ideas, made real</p><h2 className="display-large projects-title">Selected work<span className="accent-period">.</span></h2></div><p className="work-intro">A selection of experiments and products<br/>across AI, the web and the world around us.</p></div>
+
         <div className="projects-list">
-          {portfolioData.projects.map((project, index) => (
-            <div 
-              key={project.id} 
+          {portfolioData.projects.map((project) => (
+            <article
+              key={project.id}
               className="project-item view-cursor"
               ref={addToRefs}
-              onClick={() => setActiveProject(project)}
             >
               <div className="project-grid">
                 <div className="project-number display-huge">
@@ -95,18 +83,19 @@ const Projects = () => {
                   <div className="project-tech mono-label">
                     {project.techStack}
                   </div>
+                  <button type="button" className="case-study-link interactive" onClick={() => setActiveProject(project)} aria-label={`Read case study: ${project.title}`}>Explore project <span aria-hidden="true">↗</span></button>
                   <div className="project-hover-line"></div>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
-      
+
       {activeProject && (
-        <ProjectModal 
-          project={activeProject} 
-          onClose={() => setActiveProject(null)} 
+        <ProjectModal
+          project={activeProject}
+          onClose={closeProject}
         />
       )}
     </section>

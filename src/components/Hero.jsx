@@ -19,31 +19,24 @@ const Hero = () => {
       // Set initial video overlay opacity
       gsap.set('#global-video-overlay', { '--overlay-opacity': 0.25 });
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          scrub: 1,
-        }
-      });
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
       // Animate the huge name parts dynamically
-      tl.fromTo(titleRefs.current[0], 
-        { x: -200, opacity: 0 }, 
+      tl.fromTo(titleRefs.current[0],
+        { x: -200, opacity: 0 },
         { x: 0, opacity: 1, duration: 1 }
       )
-      .fromTo(titleRefs.current[1], 
-        { x: 200, opacity: 0 }, 
+      .fromTo(titleRefs.current[1],
+        { x: 200, opacity: 0 },
         { x: 0, opacity: 1, duration: 1 },
         "-=0.5"
       )
-      .fromTo(titleRefs.current[2], 
-        { y: 100, opacity: 0, clipPath: 'inset(100% 0 0 0)' }, 
+      .fromTo(titleRefs.current[2],
+        { y: 100, opacity: 0, clipPath: 'inset(100% 0 0 0)' },
         { y: 0, opacity: 1, clipPath: 'inset(0% 0 0 0)', duration: 1 },
         "-=0.5"
       );
-      
+
       // Fade out on scroll away
       gsap.to(sectionRef.current, {
         opacity: 0,
@@ -54,7 +47,7 @@ const Hero = () => {
           scrub: true
         }
       });
-      
+
     }, sectionRef);
 
     return () => ctx.revert();
@@ -63,7 +56,7 @@ const Hero = () => {
   return (
     <section className="section hero-section" ref={sectionRef}>
       <div className="container hero-container">
-        
+
         <div className="hero-top">
           {portfolioData.availability.enabled && (
             <div className="hero-availability mono-label">
@@ -86,16 +79,19 @@ const Hero = () => {
         </div>
 
         <div className="hero-middle">
-          <div className="hero-titles">
+          <div className="hero-identity">
+          <p className="mono-label hero-eyebrow">Independent mind. Practical intelligence.</p>
+          <h1 className="hero-titles" aria-label="Ayan Kumar Mondal">
             {portfolioData.hero.name.map((part, index) => (
-              <h1 
-                key={index} 
-                className="display-huge hero-name" 
+              <span
+                key={index}
+                className="display-huge hero-name"
                 ref={addToRefs}
               >
                 {part}
-              </h1>
+              </span>
             ))}
+          </h1>
           </div>
         </div>
 

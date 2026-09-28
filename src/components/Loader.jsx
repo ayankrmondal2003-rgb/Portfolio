@@ -11,6 +11,7 @@ const Loader = () => {
 
   useEffect(() => {
     const tl = gsap.timeline();
+    tl.timeScale(3);
 
     tl.to(text1Ref.current, { opacity: 1, y: 0, duration: 1, ease: "power2.out", delay: 0.5 })
       .to(text1Ref.current, { opacity: 0, y: -20, duration: 0.5, ease: "power2.in" }, "+=0.5")
@@ -29,6 +30,7 @@ const Loader = () => {
         onComplete: () => setLoading(false)
       });
 
+    return () => tl.kill();
   }, []);
 
   if (!loading) return null;

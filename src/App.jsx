@@ -19,6 +19,7 @@ import Credentials from './components/Credentials';
 import Github from './components/Github';
 import Exploring from './components/Exploring';
 import Contact from './components/Contact';
+import './premium.css';
 
 gsap.registerPlugin(ScrollTrigger);
 

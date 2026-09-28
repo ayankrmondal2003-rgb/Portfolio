@@ -42,16 +42,15 @@ const Contact = () => {
       <div className="container contact-container">
         
         <div className="contact-main">
-          <h1 className="display-huge contact-title">
-            LET'S<br/>BUILD<br/>WHAT'S NEXT.
-          </h1>
+          <p className="mono-label section-kicker">The next good idea starts with a conversation</p>
+          <h2 className="display-huge contact-title">Let’s build<br/><span>what’s next.</span></h2>
           
           <p className="body-large contact-desc">
             AI project? Hackathon? Product idea? Research collaboration? Let's talk.
           </p>
           
           <div className="contact-links mono-label">
-            <a href={`mailto:${portfolioData.contact.email}`} className="interactive contact-link">{portfolioData.contact.email.toUpperCase()} ↗</a>
+            <a href={`mailto:${portfolioData.contact.email}`} className="interactive contact-link">{portfolioData.contact.email} ↗</a>
             <a href={portfolioData.contact.linkedin} target="_blank" rel="noreferrer" className="interactive contact-link">LINKEDIN ↗</a>
             <a href={portfolioData.contact.github} target="_blank" rel="noreferrer" className="interactive contact-link">GITHUB ↗</a>
             {portfolioData.contact.cvUrl && (

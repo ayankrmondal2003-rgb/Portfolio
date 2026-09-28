@@ -37,6 +37,7 @@
 }
 
 .modal-header {
+  gap: 24px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -46,6 +47,7 @@
 }
 
 .modal-title-group {
+  min-width: 0;
   display: flex;
   flex-direction: column;
 }
@@ -57,11 +59,13 @@
 .modal-title {
   font-size: clamp(2rem, 4vw, 3rem);
   color: var(--text-main);
-  line-height: 1;
+  line-height: 1.2;
+  text-transform: none;
   margin-top: 5px;
 }
 
 .modal-close {
+  flex-shrink: 0;
   background: none;
   border: none;
   color: var(--text-muted);
@@ -106,7 +110,8 @@
 
 .modal-main-text p {
   color: var(--text-main);
-  line-height: 1.6;
+  line-height: 1.8;
+  max-width: 65ch;
 }
 
 .sidebar-group {

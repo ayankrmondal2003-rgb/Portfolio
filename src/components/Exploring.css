@@ -14,10 +14,10 @@
 }
 
 .exploring-item {
-  color: transparent;
-  -webkit-text-stroke: 1px var(--text-muted);
+  color: var(--text-main);
+  -webkit-text-stroke: 0;
   font-size: clamp(2.5rem, 5vw, 4rem);
-  line-height: 1;
+  line-height: 1.2;
   transition: -webkit-text-stroke 0.3s ease, color 0.3s ease;
   cursor: default;
 }

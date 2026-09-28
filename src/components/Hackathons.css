@@ -77,7 +77,8 @@
 .timeline-item-title {
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   color: var(--text-main);
-  line-height: 1.1;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
 }
 
 .timeline-item-status {
@@ -85,7 +86,8 @@
 }
 
 .timeline-item-desc {
-  max-width: 500px;
+  max-width: 56ch;
+  line-height: 1.8;
   color: var(--text-muted);
   margin-top: 10px;
 }

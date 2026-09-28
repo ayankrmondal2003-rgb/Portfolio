@@ -33,14 +33,15 @@
 .education-details {
   max-width: 600px;
   background-color: rgba(5, 5, 5, 0.4);
-  backdrop-filter: blur(5px);
+
   padding: 40px;
   border-left: 2px solid var(--accent-cyan);
 }
 
 .education-degree {
   color: var(--text-main);
-  line-height: 1.1;
+  line-height: 1.2;
+  text-transform: none;
 }
 
 .education-meta {

@@ -10,7 +10,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 80vh;
+  min-height: 80vh;
+  height: auto;
+  gap: clamp(40px, 6vh, 80px);
+  padding-bottom: 48px;
   width: 100%;
 }
 
@@ -53,7 +56,7 @@
 
 .hero-middle {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: minmax(0, 1fr);
   align-items: end;
   position: relative;
 }
@@ -67,13 +70,14 @@
 .hero-name {
   color: var(--text-main);
   /* The clamp for responsive typography was added globally but we ensure it here */
-  font-size: clamp(3.8rem, 11vw, 11rem);
+  font-size: clamp(3rem, 10.5vw, 10rem);
+  font-weight: 600;
 }
 
 .hero-name:nth-child(2) {
   align-self: center;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--text-muted);
+  color: rgba(245, 245, 245, 0.12);
+  -webkit-text-stroke: 1px #D4D8DF;
 }
 
 .hero-name:nth-child(3) {
@@ -108,11 +112,12 @@
 }
 
 .hero-desc-container {
-  max-width: 400px;
+  max-width: 48ch;
 }
 
 .hero-desc {
-  font-size: 1.2rem;
+  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  line-height: 1.7;
   color: var(--text-main);
   margin-bottom: 15px;
 }
@@ -137,6 +142,12 @@
 }
 
 @media (max-width: 768px) {
+  .hero-section { padding-top: 120px; margin-bottom: 80px; }
+  .hero-container { min-height: auto; gap: 48px; }
+  .hero-info-right { align-items: flex-start; }
+  .hero-roles { text-align: left; }
+  .hero-name:nth-child(2) { align-self: flex-start; }
+  .hero-link { padding: 8px 0; }
   .hero-top {
     flex-direction: column;
     gap: 20px;
